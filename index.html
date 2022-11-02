@@ -80,139 +80,17 @@
 
           <!-- CONTACS AREA -->
           <div class="contacts">
-            <div class="contact">
+            <div class="contact" v-for="(contact, index) in contacts">
               <div class="contact-user">
                 <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
+                  <img
+                    class="avatar"
+                    :src="'img/avatar' + contact.avatar + '.jpg' "
+                    :alt="'Avatar' + contact.avatar"
+                  />
                 </div>
                 <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
-                  <p>Ultimo messaggio inviato</p>
-                </div>
-              </div>
-              <div class="contact-last-access">
-                <span>12:00</span>
-              </div>
-            </div>
-            <div class="contact">
-              <div class="contact-user">
-                <div class="contact-image">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="Avatar 1" />
-                </div>
-                <div class="contact-text">
-                  <h3>Michele</h3>
+                  <h3>{{contact.name}}</h3>
                   <p>Ultimo messaggio inviato</p>
                 </div>
               </div>

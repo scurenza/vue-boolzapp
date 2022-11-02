@@ -160,6 +160,7 @@ i{
     background-color: #ffffff;
     height: calc(100% - var(--navbar-header-height) - var(--notifications-height) - var(--searchbar-height) );
     overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 .contact{
@@ -190,6 +191,10 @@ i{
     font-size: .8rem;
 }
 
+/* ACTIVE STATUS */
+.active {
+    background-color: #e9ebeb;
+}
 /* MAIN MESSAGE */
 .main-message{
     height: 100%;
