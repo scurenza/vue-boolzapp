@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolzapp</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -20,7 +38,51 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- MAIN CONTAINER -->
+      <div class="container">
+        <!-- LEFT NAVBAR -->
+        <div class="navbar">
+          <!-- NAVBAR HEADER -->
+          <div class="navbar-header">
+            <!-- USER -->
+            <div class="navbar-header-user">
+              <img class="avatar" src="img/avatar_io.jpg" alt="User Avatar" />
+              <h4>Sofia</h4>
+            </div>
+
+            <!-- CTA -->
+            <div class="navbar-header-cta">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+
+          <!-- ACTIVE NOTIFICATIONS -->
+          <div class="notifications">
+            <div class="notifications-logo">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+          </div>
+        </div>
+        <!-- /LEFT NAVBAR -->
+
+        <!-- MESSAGE PART -->
+        <div class="main-message">
+          <!-- MAIN MESSAGE HEADER -->
+          <div class="main-message-header"></div>
+
+          <!-- MAIN MESSAGE TEXT AREA -->
+          <div class="main-message-text-area"></div>
+
+          <!-- MAIN MESSAGE FOOTER -->
+          <div class="main-message-footer"></div>
+        </div>
+        <!-- /MESSAGE PART -->
+      </div>
+      <!-- /MAIN CONTAINER -->
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
