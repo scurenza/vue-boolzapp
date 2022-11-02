@@ -195,6 +195,7 @@ i{
 .active {
     background-color: #e9ebeb;
 }
+
 /* MAIN MESSAGE */
 .main-message{
     height: 100%;
@@ -215,8 +216,41 @@ i{
 .main-message-text-area{
     height: calc(100% - 140px);
     width: 100%;
+    padding: 3rem 6rem;
+    display: flex;
+    flex-direction: column;
 
-    
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+.message{
+    min-width: 200px;
+    max-width: 350px;
+    padding: 1.2rem 1.6rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+
+    position: relative;
+}
+
+.sent{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.received{
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+
+.dateMsg{
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+
+    color: gray;
+    font-size: .8rem;
 }
 
 .main-message-footer{
@@ -224,3 +258,4 @@ i{
     width: 100%;
     background-color: #f3eeea;
 }
+

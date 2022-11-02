@@ -165,7 +165,8 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            currentMessage: 0
             
         }
     },
@@ -173,6 +174,9 @@ createApp({
 
     },
     methods: {
+        showMessage: function(clickedUser) {
+            this.currentMessage = clickedUser;
+        }
 
     }
 }).mount('#app');
