@@ -23,13 +23,20 @@ body{
     align-items: center;
 }
 
+:root {
+    --navbar-header-height: 70px;
+    --notifications-height: 80px;
+    --searchbar-height: 50px;
+    --contact-height: 80px;
+}
+
 /* IMAGE RESET */
 img{
     max-width: 100%;
 }
 
 .avatar{
-    width: 60px;
+    width: 50px;
     border-radius: 100%;
 }
 
@@ -60,15 +67,13 @@ i{
 }
 
 .navbar-header{
-    height: 70px;
+    height: var(--navbar-header-height);
     width: 100%;
     line-height: 70px;
     padding: 0 .5rem;
 
     display: flex;
     justify-content: space-between;
-
-    border: 2px solid black;
 }
 
 .navbar-header-user{
@@ -87,24 +92,102 @@ i{
 }
 
 .notifications{
-    height: 80px;
+    height: var(--notifications-height);
     width: 100%;
     background-color: #8edafc;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 1rem;
 }
 
 .notifications-logo i{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #8edafc;
+    
 }
 
 .notifications-logo{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #f2fbff;
     border-radius: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: .5rem;
+}
+
+.notifications-text a{
+    color: grey;
+}
+
+/* SEARCH BAR */
+.searchbar{
+    width: 100%;
+    height: var(--searchbar-height);
+    padding: 0 .5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.searchbar-icon{
+    width: 20%;
+    height: 35px;
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar-icon i{
+    font-size: 1.2rem;
+}
+
+.searchbar input{
+    height: 35px;
+    width: 80%;
+    border: none;
+}
+
+/* CONTACTS */
+.contacts{
+    background-color: #ffffff;
+    height: calc(100% - var(--navbar-header-height) - var(--notifications-height) - var(--searchbar-height) );
+    overflow-y: scroll;
+}
+
+.contact{
+    height: var(--contact-height);
+    padding: 0 .7rem;
+
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e9ebeb;
+}
+
+.contact-user{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contact-image{
+    margin-right: .8rem;
+}
+
+.contact-text p {
+    color: gray;
+}
+
+.contact-last-access span {
+    color: gray;
+    font-size: .8rem;
 }
 
 /* MAIN MESSAGE */
