@@ -36,6 +36,10 @@ body{
     --contact-height: 80px;
 }
 
+.grey{
+    color: grey;
+}
+
 /* IMAGE RESET */
 img{
     max-width: 100%;
@@ -218,7 +222,10 @@ i{
     width: 100%;
     background-color: #f3eeea;
 
-    padding: .5rem .8rem;
+    padding: .5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-message-text-area{
@@ -265,10 +272,46 @@ i{
     height: 70px;
     width: 100%;
     background-color: #f3eeea;
+    padding: 1rem 2.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-message-header-user{
     display: flex;
 }
 
+.main-message-header-user-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.main-message-header-cta{
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FOOTER */
+.footer-icon i{
+    font-size: 1.5rem;
+    color: #6b7376;
+}
+
+.footer-input{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-input input{
+    width: 90%;
+    height: 50px;
+    padding: .5rem;
+
+    border: none;
+    border-radius: 5px;
+}

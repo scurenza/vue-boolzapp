@@ -100,7 +100,10 @@
                 </div>
               </div>
               <div class="contact-last-access">
-                <span>12:00</span>
+                <span
+                  >{{ contacts[index].messages[contacts[index].messages.length -
+                  1].date.substr(11,5) }}</span
+                >
               </div>
             </div>
           </div>
@@ -121,11 +124,19 @@
               </div>
               <div class="main-message-header-user-text">
                 <h3>{{ contacts[activeContact].name }}</h3>
-                <span
+                <span class="grey"
                   >Ultimo accesso alle
-                  {{contacts[activeContact].messages[2].date.substr(11,5)}}
+                  <!-- {{contacts[activeContact].messages[2].date.substr(11,5)}} -->
+                  {{
+                  contacts[activeContact].messages[contacts[activeContact].messages.length
+                  - 1].date.substr(11,5) }}
                 </span>
               </div>
+            </div>
+            <div class="main-message-header-cta">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
 
@@ -137,12 +148,25 @@
               v-for="(message, index) in contacts[activeContact].messages"
             >
               <span> {{message.message}} </span>
-              <span class="dateMsg">15:30</span>
+              <span class="dateMsg"
+                >{{ contacts[activeContact].messages[index].date.substr(11,5)
+                }}</span
+              >
             </div>
           </div>
 
           <!-- MAIN MESSAGE FOOTER -->
-          <div class="main-message-footer"></div>
+          <div class="main-message-footer">
+            <div class="footer-icon">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div class="footer-input">
+              <input type="text" placeholder="Scrivi un messaggio" />
+            </div>
+            <div class="footer-icon">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
         </div>
         <!-- /MESSAGE PART -->
       </div>
