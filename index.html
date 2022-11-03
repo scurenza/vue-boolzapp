@@ -80,7 +80,12 @@
 
           <!-- CONTACS AREA -->
           <div class="contacts">
-            <div class="contact" v-for="(contact, index) in contacts">
+            <div
+              class="contact"
+              v-for="(contact, index) in contacts"
+              :class="activeContact === index ? 'active' : ''"
+              @click="showMessage(index)"
+            >
               <div class="contact-user">
                 <div class="contact-image">
                   <img
@@ -109,8 +114,10 @@
 
           <!-- MAIN MESSAGE TEXT AREA -->
           <div class="main-message-text-area">
-            <div class="message sent">
-              <span>Hai portato a spasso il cane?</span>
+            <div class="message" v-for="(messages, index) in contacts">
+              <span>
+                {{ contacts[activeContact].messages[index].message }}
+              </span>
               <span class="dateMsg">15:30</span>
             </div>
             <div class="message sent">
