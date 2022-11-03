@@ -11,7 +11,7 @@ createApp({
             newMessage: {
                 date: '',
                 message: '',
-                status: 'sent'
+                status: ''
             },
             contacts: [
                 {
@@ -189,9 +189,20 @@ createApp({
         showMessage: function(clickedUser) {
             this.activeContact = clickedUser;
         },
-        addMessage(activeContact) {
-            // this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-            this.contacts[activeContact].messages.push(newMessage);
+        addMessage: function(activeContact) {
+            this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+            this.contacts[activeContact].messages.push(this.newMessage);
+            this.newMessage.status = 'sent';
+            this.newMessage = "";
+            setTimeout(this.addAnswer, 1000);
+        },
+        addAnswer() {
+            const answerMessage = {
+                date:dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: 'ok',
+                status: 'received'
+            }
+            this.contacts[this.activeContact].messages.push(answerMessage);
         }
 
 

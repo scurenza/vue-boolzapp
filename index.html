@@ -129,9 +129,7 @@
               <div class="main-message-header-user-text">
                 <h3>{{ contacts[activeContact].name }}</h3>
                 <span class="grey"
-                  >Ultimo accesso alle
-                  <!-- {{contacts[activeContact].messages[2].date.substr(11,5)}} -->
-                  {{
+                  >Ultimo accesso alle {{
                   contacts[activeContact].messages[contacts[activeContact].messages.length
                   - 1].date.substr(11,5) }}
                 </span>
@@ -169,7 +167,7 @@
                 type="text"
                 placeholder="Scrivi un messaggio"
                 v-model.trim="newMessage.message"
-                @keyup.enter="addMessage"
+                @keyup.enter="addMessage(activeContact)"
               />
             </div>
             <div class="footer-icon">
