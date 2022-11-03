@@ -110,71 +110,33 @@
         <!-- MESSAGE PART -->
         <div class="main-message">
           <!-- MAIN MESSAGE HEADER -->
-          <div class="main-message-header"></div>
+          <div class="main-message-header">
+            <div class="main-message-header-user">
+              <div class="main-message-header-user-avatar">
+                <img
+                  class="avatar"
+                  :src="'img/avatar' + contacts[activeContact].avatar + '.jpg' "
+                  :alt="'Avatar' + contacts[activeContact].avatar"
+                />
+              </div>
+              <div class="main-message-header-user-text">
+                <h3>{{ contacts[activeContact].name }}</h3>
+                <span
+                  >Ultimo accesso alle
+                  {{contacts[activeContact].messages[2].date.substr(11,5)}}
+                </span>
+              </div>
+            </div>
+          </div>
 
           <!-- MAIN MESSAGE TEXT AREA -->
           <div class="main-message-text-area">
-            <div class="message" v-for="(messages, index) in contacts">
-              <span>
-                {{ contacts[activeContact].messages[index].message }}
-              </span>
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message sent">
-              <span>Ricordati di stendere i panni!</span>
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message received">
-              <span>Tutto fatto!</span>
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message received">
-              <span>ok</span>
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message received">
-              <span
-                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Soluta, molestias nam fugiat eligendi temporibus neque deleniti
-                eveniet! Placeat ut reiciendis nam eaque cumque autem, molestias
-                ex! Ullam perferendis cumque aliquam?</span
-              >
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message sent">
-              <span
-                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Soluta, molestias nam fugiat eligendi temporibus neque deleniti
-                eveniet! Placeat ut reiciendis nam eaque cumque autem, molestias
-                ex! Ullam perferendis cumque aliquam?</span
-              >
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message sent">
-              <span
-                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Soluta, molestias nam fugiat eligendi temporibus neque deleniti
-                eveniet! Placeat ut reiciendis nam eaque cumque autem, molestias
-                ex! Ullam perferendis cumque aliquam?</span
-              >
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message sent">
-              <span
-                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Soluta, molestias nam fugiat eligendi temporibus neque deleniti
-                eveniet! Placeat ut reiciendis nam eaque cumque autem, molestias
-                ex! Ullam perferendis cumque aliquam?</span
-              >
-              <span class="dateMsg">15:30</span>
-            </div>
-            <div class="message sent">
-              <span
-                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Soluta, molestias nam fugiat eligendi temporibus neque deleniti
-                eveniet! Placeat ut reiciendis nam eaque cumque autem, molestias
-                ex! Ullam perferendis cumque aliquam?</span
-              >
+            <div
+              class="message"
+              :class="[message.status]"
+              v-for="(message, index) in contacts[activeContact].messages"
+            >
+              <span> {{message.message}} </span>
               <span class="dateMsg">15:30</span>
             </div>
           </div>

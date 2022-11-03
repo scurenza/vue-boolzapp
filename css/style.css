@@ -217,6 +217,8 @@ i{
     height: 70px;
     width: 100%;
     background-color: #f3eeea;
+
+    padding: .5rem .8rem;
 }
 
 .main-message-text-area{
@@ -264,4 +266,9 @@ i{
     width: 100%;
     background-color: #f3eeea;
 }
+
+.main-message-header-user{
+    display: flex;
+}
+
 
