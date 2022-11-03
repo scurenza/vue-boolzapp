@@ -189,9 +189,9 @@ createApp({
         showMessage: function(clickedUser) {
             this.activeContact = clickedUser;
         },
-        newMessage: (activeContact) => {
+        addMessage(activeContact) {
             // this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-            contacts[activeContact].messages.push(this.newMessage);
+            this.contacts[activeContact].messages.push(newMessage);
         }
 
 
