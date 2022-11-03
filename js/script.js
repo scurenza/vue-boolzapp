@@ -8,11 +8,7 @@ createApp({
     data() {
         return {
             activeContact: 0,
-            newMessage: {
-                date: '',
-                message: '',
-                status: ''
-            },
+            msg: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -183,22 +179,27 @@ createApp({
     },
     
     created() {
-        
+        this.now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
     },
     methods: {
         showMessage: function(clickedUser) {
             this.activeContact = clickedUser;
         },
-        addMessage: function(activeContact) {
-            this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-            this.contacts[activeContact].messages.push(this.newMessage);
-            this.newMessage.status = 'sent';
-            this.newMessage = "";
+        addMessage() {
+            const newMessage = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: this.msg,
+                status: 'sent'
+            }
+            // this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+            this.contacts[this.activeContact].messages.push(newMessage);
+            // this.newMessage.status = 'sent';
+            this.msg = "";
             setTimeout(this.addAnswer, 1000);
         },
         addAnswer() {
             const answerMessage = {
-                date:dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'ok',
                 status: 'received'
             }
