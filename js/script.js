@@ -1,9 +1,18 @@
 const { createApp } = Vue;
+const dt = luxon.DateTime;
+const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+console.log(now.substr(11,5));
+
 
 createApp({
     data() {
         return {
             activeContact: 0,
+            newMessage: {
+                date: '',
+                message: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -170,14 +179,21 @@ createApp({
             
             
         }
+        
     },
+    
     created() {
-
+        
     },
     methods: {
         showMessage: function(clickedUser) {
             this.activeContact = clickedUser;
+        },
+        newMessage: (activeContact) => {
+            // this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+            contacts[activeContact].messages.push(this.newMessage);
         }
+
 
     }
 }).mount('#app');

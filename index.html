@@ -36,6 +36,10 @@
 
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Luxon CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.3/build/global/luxon.min.js"></script>
+    <title>Boolzapp</title>
   </head>
   <body>
     <div id="app">
@@ -161,7 +165,12 @@
               <i class="fa-regular fa-face-smile"></i>
             </div>
             <div class="footer-input">
-              <input type="text" placeholder="Scrivi un messaggio" />
+              <input
+                type="text"
+                placeholder="Scrivi un messaggio"
+                v-model.trim="newMessage.message"
+                @keyup.enter="newMessage"
+              />
             </div>
             <div class="footer-icon">
               <i class="fa-solid fa-microphone"></i>
