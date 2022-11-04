@@ -181,7 +181,7 @@ createApp({
     },
     
     created() {
-        this.now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
+        
     },
     methods: {
         showMessage: function(clickedUser) {
@@ -208,8 +208,8 @@ createApp({
             }
             this.contacts[this.activeContactBot].messages.push(answerMessage);
         },
-        filterContacs() {
-            alert("ciao");
+        filterContacts() {
+            console.log(this.searchContact);
         }
 
 
