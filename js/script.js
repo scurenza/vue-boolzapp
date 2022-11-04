@@ -199,6 +199,9 @@ createApp({
                 this.msg = "";
                 setTimeout(this.addAnswer, 1000);
             }
+            this.$nextTick(() => {
+                this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight;
+            } )
         },
         addAnswer() {
             const answerMessage = {
