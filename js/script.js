@@ -210,14 +210,26 @@ createApp({
         },
         filterContacts() {
             for(let index = 0; index < this.contacts.length; index++) {
-                const username = this.contacts[index].name;
-                for (i = 0; i < username.length; i++) {
-                   if(username[i] === this.searchContact[i]){
-                    console.log('il carattere è contenuto');
-                   } 
+                const username = this.contacts[index].name.toLowerCase();
+                
+                // for (i = 0; i < this.searchContact.length; i++) {
+                //    if(username[i] === this.searchContact[i]){
+                //     console.log('il carattere è contenuto');
+                //    } 
+                // }
+                
+                // for(let i = 0; i < this.searchContact.length; i++) {
+                //     if (username[0] === this.searchContact[0]) {
+                //         console.log(this.contacts[index].name);
+                //     }
+                // }
+
+                if (!username.includes(this.searchContact)) {
+                    this.contacts[index].visible = false;
+                } else if (this.searchContact === "") {
+                    this.contacts[index].visible = true;
                 }
             }
-            
         }
     }
 }).mount('#app');

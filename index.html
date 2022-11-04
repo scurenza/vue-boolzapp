@@ -92,6 +92,7 @@
             <div
               class="contact"
               v-for="(contact, index) in contacts"
+              v-show="contacts[index].visible"
               :class="activeContact === index ? 'active' : ''"
               @click="showMessage(index)"
             >
