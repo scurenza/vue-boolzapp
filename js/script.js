@@ -8,6 +8,8 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            activeContactBot: 0,
+            searchContact: "",
             msg: "",
             contacts: [
                 {
@@ -186,16 +188,17 @@ createApp({
             this.activeContact = clickedUser;
         },
         addMessage() {
+            this.activeContactBot = this.activeContact;
             const newMessage = {
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.msg,
                 status: 'sent'
             }
-            // this.newMessage.date = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-            this.contacts[this.activeContact].messages.push(newMessage);
-            // this.newMessage.status = 'sent';
-            this.msg = "";
-            setTimeout(this.addAnswer, 1000);
+            if (this.msg !== "") {
+                this.contacts[this.activeContact].messages.push(newMessage);
+                this.msg = "";
+                setTimeout(this.addAnswer, 1000);
+            }
         },
         addAnswer() {
             const answerMessage = {
@@ -203,7 +206,10 @@ createApp({
                 message: 'ok',
                 status: 'received'
             }
-            this.contacts[this.activeContact].messages.push(answerMessage);
+            this.contacts[this.activeContactBot].messages.push(answerMessage);
+        },
+        filterContacs() {
+            alert("ciao");
         }
 
 

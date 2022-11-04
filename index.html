@@ -79,7 +79,12 @@
             <div class="searchbar-icon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="text" placeholder="Cerca o inizia una nuova chat" />
+            <input
+              type="text"
+              placeholder="Cerca o inizia una nuova chat"
+              @keyup="filterContacts()"
+              v-model.trim="searchContact"
+            />
           </div>
 
           <!-- CONTACS AREA -->
@@ -100,7 +105,10 @@
                 </div>
                 <div class="contact-text">
                   <h3>{{contact.name}}</h3>
-                  <p>Ultimo messaggio inviato</p>
+                  <p>
+                    {{ contacts[index].messages[contacts[index].messages.length
+                    - 1].message }}
+                  </p>
                 </div>
               </div>
               <div class="contact-last-access">
@@ -146,10 +154,10 @@
           <div class="main-message-text-area">
             <div
               class="message"
-              :class="[message.status]"
-              v-for="(message, index) in contacts[activeContact].messages"
+              :class="[messageObj.status]"
+              v-for="(messageObj, index) in contacts[activeContact].messages"
             >
-              <span> {{message.message}} </span>
+              <span> {{messageObj.message}} </span>
               <span class="dateMsg"
                 >{{ contacts[activeContact].messages[index].date.substr(11,5)
                 }}</span
@@ -167,7 +175,7 @@
                 type="text"
                 placeholder="Scrivi un messaggio"
                 v-model.trim="msg"
-                @keyup.enter="addMessage(activeContact)"
+                @keyup.enter="addMessage()"
               />
             </div>
             <div class="footer-icon">
