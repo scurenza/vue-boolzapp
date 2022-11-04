@@ -209,9 +209,15 @@ createApp({
             this.contacts[this.activeContactBot].messages.push(answerMessage);
         },
         filterContacts() {
-            console.log(this.searchContact);
+            for(let index = 0; index < this.contacts.length; index++) {
+                const username = this.contacts[index].name;
+                for (i = 0; i < username.length; i++) {
+                   if(username[i] === this.searchContact[i]){
+                    console.log('il carattere è contenuto');
+                   } 
+                }
+            }
+            
         }
-
-
     }
 }).mount('#app');
