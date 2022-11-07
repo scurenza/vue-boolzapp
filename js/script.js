@@ -199,9 +199,7 @@ createApp({
                 this.msg = "";
                 setTimeout(this.addAnswer, 1000);
             }
-            this.$nextTick(() => {
-                this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight;
-            } )
+            this.autoScroll();
         },
         addAnswer() {
             const answerMessage = {
@@ -210,6 +208,7 @@ createApp({
                 status: 'received'
             }
             this.contacts[this.activeContactBot].messages.push(answerMessage);
+            this.autoScroll();
         },
         filterContacts() {
             for(let index = 0; index < this.contacts.length; index++) {
@@ -227,12 +226,17 @@ createApp({
                 //     }
                 // }
 
-                if (!username.includes(this.searchContact)) {
+                if (!username.includes(this.searchContact.toLowerCase())) {
                     this.contacts[index].visible = false;
                 } else if (this.searchContact === "") {
                     this.contacts[index].visible = true;
                 }
             }
+        },
+        autoScroll () {
+            this.$nextTick(() => {
+                this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight;
+            } )
         }
     }
 }).mount('#app');
